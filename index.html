@@ -1,40 +1,204 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="pt-BR">
 
 <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Projeto Alpha D - Home</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="Explore os melhores cursos online para idosos na Alpha D. Oferecemos uma educação à distância de qualidade, adaptada para a terceira idade. Inscreva-se agora!">
+    <meta name="keywords"
+        content="cursos online para idosos, educação à distância, aprendizado para a terceira idade, Alpha D">
+    <meta name="author" content="Alpha D">
+    <meta name="robots" content="index, follow">
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="assets/css/sweetalert2.min.css">
     <link rel="stylesheet" href="assets/css/style.css">
+    <script src="assets/js/bootstrap.bundle.min.js" defer></script>
+    <script src="assets/js/sweetalert2.all.min.js" defer></script>
     <script src="assets/js/index.js" defer></script>
+    <title>Cursos Online para Idosos | Alpha D - Educação à Distância</title>
 </head>
 
-<body>
-
-    <div class="container-fluid" id="sectionHeader">
-        <div class="row">
-        </div>
-        <div class="row" id="row-top"></div>
-            <div class="col-6 bg-light mx-auto mt-5 rounded text-center">
-                <h1 class="mt-3">Escolha um curso da lista:</h1>
-                <ol class="list-group list-group-numbered mb-3">
-                    <li class="list-group-item">Desenvolvimento Web <span class="badge text-bg-success">R$ 199,50</span></li>
-                    <li class="list-group-item">Javascript <span class="badge text-bg-success">R$ 249,50</span></li>
-                    <li class="list-group-item">React <span class="badge text-bg-success">R$ 149,50</span></li>
-                    <li class="list-group-item">Backend <span class="badge text-bg-success">R$ 499,50</span></li>
-                    <li class="list-group-item">Figma <span class="badge text-bg-success">R$ 149,50</span></li>
-                </ol>
-                <p class="fw-bold">Veja os resultados no console!</p>
+<body class="bg-dark">
+    <nav class="navbar navbar-expand-lg bg-body-tertiary sticky-top">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">
+                <img src="assets/images/logo.png" alt="AlphaD" width="100">
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link active fw-bold" aria-current="page" href="">Home</a>
+                    </li>
+                </ul>
+                <a href="#cart" class="btn position-relative mb-3">
+                    <span class="position-absolute top-100 translate-middle badge rounded-pill bg-danger"
+                        id="cart-number">
+                        0
+                        <span class="visually-hidden">unread messages</span>
+                    </span>
+                    <i class="bi bi-cart h3"></i>
+                </a>
             </div>
         </div>
+    </nav>
+    <main main class="">
+        <!-- Título do Trabalho -->
+        <header class="text-white header-bg py-5 px-3" id="header">
+            <div class="row">
+                <div class="col col-md-5 mr-5">
+                    <h1>Descubra como desenvolver suas habilidades digitais com foco no trabalho</h1>
+                </div>
+            </div>
+            <div class="col col-md-5 mr-5 mt-5">
+                <p>Aprenda no seu próprio ritmo com nossos conteúdos e suporte de tutores digitais. Tire todas as
+                    dúvidas que atrapalham seu desenvolvimento profissional.</p>
+            </div>
+        </header>
+
+        <!-- Sessão de Cursos -->
+        <section class="container text-white" id="gridCursos">
+            <h3 class="mt-5 text-center">Escolha os cursos para comprar:</h3>
+            <div class="row mt-5" id="cursos"></div>
+        </section>
+
+        <!-- Sessão do Carrinho -->
+
+        <section class="container" id="cart">
+            <h3 class="mt-5 text-white text-center" id="cartTitle">Carrinho:</h3>
+            <table class="table table-responsive table-hover mt-5" id="cart-table">
+                <thead id="cartTHead"></thead>
+                <tbody class="table-dark text-white" id="cartTBody"></tbody>
+            </table>
+            <div class="d-flex justify-content-center">
+                <a class="btn btn-warning" id="close-cart" href="#">Finalizar Compra</a>
+            </div>
+        </section>
+
+        <!-- Sessão do Pagamento -->
+        <section class="container" id="payment">
+            <div class="row">
+                <div class="col-lg-5 d-flex justify-content-center mt-5">
+                    <a class="btn btn-outline-light" href="">← Voltar para as compras</a>
+                </div>
+                <div class="col-lg-7 mt-5">
+                    <h3 class="text-white text-center">Finalizar compra:</h3>
+                </div>
+            </div>
+            <div class="justify-content-between finalizarCompra row text-white mt-5">
+                <div class="cursos_finalizarCompra col-lg-4">
+                    <div class="total">
+                        <p class="text-center">Total</p>
+                        <table class="table table-responsive table-hover mt-2" id="payment-table">
+                            <thead id="paymentTHead"></thead>
+                            <tbody class="table-dark text-white" id="paymentTBody"></tbody>
+                        </table>
+                    </div>
+                </div>
+                <div class="dadosPessoais_finalizarCompra col-lg-7">
+                    <h4 class="text-white">Dados Pessoais:</h4>
+                    <form onsubmit="return false" class="finalizarCompraForm  text-white">
+                        <div class="form-group">
+                            <label for="nome">Nome</label>
+                            <input class="form-control" type="text" id="nome" value="Juan Silveira">
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email</label>
+                            <input class="form-control" type="email" id="email" value="juansilveira@email.com">
+                        </div>
+                        <div class="form-group d-flex flex-row justify-content-between flex-wrap telefone">
+                            <label class="w-100" for="tel">Telefone</label>
+                            <input class="form-control" type="text" value="11999999999" id="tel">
+                        </div>
+                        <div class="form-group parcelas">
+                            <label for="parcelas">Quantidade de Parcelas</label>
+                            <select class="form-control" name="parcelas" id="parcelas">
+                            </select>
+                        </div>
+                        <div>
+                            <h4 class="mt-3">Dados dos Cartão de Crédito:</h4>
+                            <div class="card_finalizarCompra">
+                                <div class="row justify-content-between">
+                                    <div class="col-md-12">
+                                        <img src="assets/images/credit_card.svg">
+                                    </div>
+                                    <div class="col left-card">
+                                        <div class="row">
+                                            <div class="col-12">
+                                                <label for="creditCardName" class="d-block">Nome</label>
+                                                <input class="w-66" type="text" name="" id="creditCardName"
+                                                    placeholder="JUAN SILVEIRA" value="JUAN SILVEIRA" required>
+                                            </div>
+                                            <div class="col-12 mt-3">
+                                                <label for="creditCardNumber" class="d-block">Número do cartão</label>
+                                                <input class="creditCardNumber w-66" type="text" name=""
+                                                    id="creditCardNumber" placeholder="1213 9111 5678 1234"
+                                                    value="1213 9111 5678 1234" required>
+                                            </div>
+                                        </div>
+                                        <div class="row mt-5">
+                                            <div class="col">
+                                                <label for="creditCardDate" class="d-block">Validade</label>
+                                                <input class="w-30" type="text" name="" id="creditCardDate"
+                                                    placeholder="00/00" value="12/23" required>
+                                            </div>
+                                            <div class="col">
+                                                <label for="creditCardCVC" class="d-block">CVC</label>
+                                                <input class="w-30" type="text" name="" id="creditCardCVC"
+                                                    placeholder="000" value="123" required>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group d-flex justify-content-center">
+                            <a class="btn btn-primary" href="#" id="confirmation-button">Confirmar compra</a>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </section>
+
+        <!-- Sessão da Confirmação do Pagamento -->
+        <section id="confirmation">
+            <div class="container">
+                <div class="card mt-5 p-2">
+                    <h3>Obrigado <span class="text-success" id="confirmation-name"></span> por estudar com a Alpha D!
+                    </h3>
+                    <h5 class="mt-2">O pagamento foi realizado com sucesso!</h5>
+                    <p class="mt-3">Você receberá seus cursos no email: <span class="text-success"
+                            id="confirmation-email"></span></p>
+                    <p>O pagamento de <span id="confirmation-total"></span> foi feito em <span
+                            id="confirmation-parcelas"></span></p>
+                    <p>Com o cartão número: **** - **** - **** - <span id="confirmation-card"></span></p>
+                </div>
+            </div>
+        </section>
+
+
+    </main>
+
+    <!-- Footer -->
+    <div class="container-fluid">
+        <footer class="d-flex flex-wrap justify-content-between align-items-center py-3 my-4 border-top">
+            <img src="assets/images/logo.png" alt="Bootstrap" width="50">
+            <span class="text-white text-center">© 2023 Company, Inc</span>
+
+            <ul class="nav col-md-4 justify-content-end list-unstyled d-flex text-white">
+                <li class="ms-3"><a class="text-white" href="https://linkedin.com/in/juan-silveira" target="_blank"><i
+                            class="bi bi-linkedin"></i></a></li>
+                <li class="ms-3"><a class="text-white" href="https://github.com/juan-silveira/projeto-turma-45465"
+                        target="_blank"><i class="bi bi-github"></i></a></li>
+            </ul>
+        </footer>
     </div>
-
-
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
-        crossorigin="anonymous"></script>
 </body>
 
 </html>

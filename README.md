@@ -1,3 +1,3 @@
 # projeto-turma-45465
 
-Estado: Entrega parcial 1 - Projeto Final
+Estado: Entrega parcial 2 - Projeto Final
