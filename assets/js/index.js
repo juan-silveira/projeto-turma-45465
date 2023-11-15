@@ -143,7 +143,7 @@ const showCart = () => {
             </tr>`)
             paymentTBody.insertAdjacentHTML("beforeend", `
             <tr class="text-center">
-                <td><div class="card bg-dark payment-card-image"><img class="payment-image" src="${e.img}" alt="${e.name}"></div></td>
+                <td><div class=""><img class="payment-image" src="${e.img}" alt="${e.name}"></div></td>
                 <td>${e.name}</td>
                 <td>${e.price.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' })}</td>
             </tr>`)
@@ -163,7 +163,6 @@ const showCart = () => {
                 <th scope="row"></th>
                 <td class="fw-bold fs-5">TOTAL:</td>
                 <td class="fw-bold fs-5">${tValue.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' })}</td>
-                <td></td>
             </tr>`
         )
 
@@ -233,7 +232,7 @@ const getParcelas = () => {
 
 const proceedToPayment = () => {
     getParcelas();
-    document.getElementById("header").style.display = "none";
+    document.getElementById("about").style.display = "none";
     document.getElementById("gridCursos").style.display = "none";
     document.getElementById("cart").style.display = "none";
     document.getElementById("payment").style.display = "block";
@@ -243,8 +242,9 @@ const closeCart = document.getElementById("close-cart");
 closeCart.addEventListener("click", proceedToPayment)
 
 const showConfirmation = () => {
+    localStorage.removeItem("carrinho");
     document.getElementById("cart-number").innerHTML = 0;
-    document.getElementById("header").style.display = "none";
+    document.getElementById("about").style.display = "none";
     document.getElementById("gridCursos").style.display = "none";
     document.getElementById("cart").style.display = "none";
     document.getElementById("payment").style.display = "none";
