@@ -33,8 +33,8 @@ const createElement = (tag, classNames) => {
 // Monta os cards dos cursos
 cursos.forEach((e, i) => {
     cursosCards.insertAdjacentHTML("beforeend", `
-    <div class="col-md-3 mt-4">
-        <div class="card">
+    <div class="card mx-2 mb-3" style="width: 15rem;">
+        <div class="card m-0">
             <div class="card-header p-0"><img class="card-image w-100" src="${e.img}" alt="${e.name}"></div>
             <div class="card-body">
             <p class="text-center"><b>${e.name}</b></p>
@@ -97,7 +97,7 @@ const showCart = () => {
     const cart = document.getElementById("cart");
     cursos.forEach(e => {
         if (e.onCart == true) {
-            carrinho.push({ id: e.id, name: e.name, price: e.price, img: e.img});
+            carrinho.push({ id: e.id, name: e.name, price: e.price, img: e.img });
         }
     });
     if (carrinho.length == 0) {
@@ -219,11 +219,11 @@ if (localStorage.getItem("carrinho") && localStorage.getItem("carrinho") !== "[]
 
 const parcelas = document.getElementById("parcelas");
 const getParcelas = () => {
-    const x2 = (tValue/2).toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
-    const x3 = (tValue/3).toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
+    const x2 = (tValue / 2).toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
+    const x3 = (tValue / 3).toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
     const tot = tValue.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
     for (i = 0; i < 2; i++) {
-        parcelas.innerHTML= `
+        parcelas.innerHTML = `
         <option value="1x ${tot}">1x ${tot}</option>
         <option value="2x ${x2}">2x ${x2}</option>
         <option value="3x ${x3}">3x ${x3}</option>

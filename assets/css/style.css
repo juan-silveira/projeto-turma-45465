@@ -1,4 +1,4 @@
-.header-bg::before{
+.header-bg::before {
     content: '';
     display: block;
     position: absolute;
@@ -20,29 +20,97 @@
     padding-left: 25px;
 }
 
-.card-image{
+.about-us {
+    padding: 0px 10px 40px 10px;
+    margin-top: 40px;
+    color: rgb(236, 237, 238);
+    background-color: #2d303a;
+    display: flex;
+    flex-direction: column;
+
+}
+
+.about-us h4 {
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+}
+
+.grid-about {
+    margin: auto;
+    width: 90%;
+    height: auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1rem;
+}
+
+.grid-about div {
+    justify-self: center;
+}
+
+.grid-about-card {
+    display: flex;
+    /* border: 1px solid white; */
+    border-radius: 10px;
+    padding: 10px 20px 10px 0;
+
+    background-color: #1e2330;
+    box-shadow: 10px 5px 15px #000;
+    height: 100;
+}
+
+.about-logo {
+    width: 50px;
+    margin: auto;
+}
+
+.about-logo img {
+
+    width: 40px;
+}
+
+.about-text {
+    text-align: left;
+    justify-content: center;
+    margin: auto;
+    font-size: 14px;
+}
+
+.card {
+    margin: 10px;
+    min-width: 200px;
+}
+
+.card-image {
     /* transform: translate(-17px); */
     object-fit: cover;
+    height: 250px;
+}
+
+.card-body {
     height: 300px;
 }
 
-.payment-card-image{
+.payment-card-image {
     height: 50px;
     width: 50px;
 }
 
-.payment-image{
+.payment-image {
     object-fit: cover;
     height: 50px;
     border-radius: 5px;
 
 }
 
-#cart, #payment, #confirmation{
+#cart,
+#payment,
+#confirmation {
     display: none;
 }
 
-.remove{
+.remove {
     cursor: pointer;
 }
 
@@ -94,20 +162,23 @@
     flex-direction: column;
     justify-content: center;
 }
+
 .right_card input {
     width: 80%;
 }
 
-#creditCardNumber{
+#creditCardNumber {
     font-size: 20px;
 }
 
-.w-30{
+.w-30 {
     width: 30%;
 }
-.w-66{
+
+.w-66 {
     width: 66%;
 }
-#home{
+
+#home {
     cursor: pointer;
 }
