@@ -77,6 +77,14 @@
     font-size: 14px;
 }
 
+.form-control {
+    margin: 5px 0 15px 0;
+}
+
+.card-layout {
+    margin-top: 50px;
+}
+
 .card {
     margin: 10px;
     min-width: 200px;
