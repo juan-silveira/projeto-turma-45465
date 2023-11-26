@@ -181,7 +181,7 @@ const showCart = () => {
 
 // Função para adicionar um item ao carrinho ao clicar no botão comprar de cada card
 const addToCart = ({ target }) => {
-    let id = target.id.split("").pop();
+    let id = target.id.replace("curso","");
     cursos[id].onCart = true;
     const btn = document.getElementById("curso" + id);
     btn.setAttribute("disabled", '');
@@ -242,6 +242,11 @@ const proceedToPayment = () => {
     document.getElementById("gridCursos").style.display = "none";
     document.getElementById("cart").style.display = "none";
     document.getElementById("payment").style.display = "block";
+    Swal.fire({
+        title: "Adicione os dados do cartão!",
+        text: "Confirme seus dados, forma de pagamento e dados do cartão!",
+        icon: 'info'
+    })
 }
 
 const closeCart = document.getElementById("close-cart");
@@ -260,6 +265,11 @@ const showConfirmation = () => {
     document.getElementById("confirmation-total").innerHTML = tValue.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
     document.getElementById("confirmation-parcelas").innerHTML = parcelas.value;
     document.getElementById("confirmation-card").innerHTML = document.getElementById("creditCardNumber").value.slice(-4);
+    Swal.fire({
+        title: "Compra realizada com sucesso!",
+        text: "Confira os dados do seu recibo e acesse o seu e-mail para visualizar os cursos!",
+        icon: 'success'
+    })
 }
 
 const confirmationButton = document.getElementById("confirmation-button");
