@@ -16,15 +16,15 @@ let tValue = 0;
 //Popula o array de cursos com todos os cursos
 cursos.push(new Curso("0", "Desenvolvimento Web", 199.50, "Curso criação de site com HTML, CSS, GIT, JavaScript, mercado programação, projeto final. Conhecimentos essenciais para desenvolvimento web.", "assets/images/html.webp"));
 cursos.push(new Curso("1", "Javascript", 249.50, "Curso aborda fundamentos de linguagem de programação, jQuery, AJAX e desenvolvimento web interativo, preparando para frameworks JavaScript.", "assets/images/javascript.png"));
-cursos.push(new Curso("2", "React", 149.50, "Curso ensina pensamento em React JS, design eficiente, Firebase, prototipagem. Desenvolvimento de aplicações SPA focado no usuário final.", "assets/images/react.svg"));
+cursos.push(new Curso("2", "React", 149.50, "Curso ensina pensamento em React JS, design eficiente, Firebase, prototipagem. Desenvolvimento de aplicações SPA focado no usuário final.", "assets/images/react.png"));
 cursos.push(new Curso("3", "Backend", 499.50, "Curso ensina desenvolvimento moderno com Node.js, MongoDB, Javascript assíncrono, NoSQL e criação de robustas aplicações de back end escaláveis.", "assets/images/backend.avif"));
 cursos.push(new Curso("4", "Figma", 149.50, "Curso focado no Figma para design UX/UI. Requer conhecimento prévio em design, grids, dark patterns e acessibilidade. Habilidades em telas mobile first.", "assets/images/figma.png"));
 cursos.push(new Curso("5", "Design UX/UI", 199.50, "Curso aborda principais técnicas de UX Research, ferramentas e metodos utilizados no mercado brasileiro.", "assets/images/ux-ui.svg"));
 cursos.push(new Curso("6", "Design UX/UI Avançado", 299.50, "Curso ensina a relacionar os conceitos iniciais de UX/UI Design, aprofundando na geração de protótipos e conceitos teóricos.", "assets/images/ux-av.svg"));
 cursos.push(new Curso("7", "UX Writing", 149.50, "Curso ensina os fundamentos de UX Writing, boas práticas, ferramentas utilizadas e mais.", "assets/images/ux-writing.svg"));
-cursos.push(new Curso("8", "PYTHON", 249.50, "Curso explora os principais princípios e funções da linguagem Python em aplicações de dados.", "assets/images/python.svg"));
+cursos.push(new Curso("8", "PYTHON", 249.50, "Curso explora os principais princípios e funções da linguagem Python em aplicações de dados.", "assets/images/python.png"));
 cursos.push(new Curso("9", "Data Science", 299.50, "Curso ensina, por meio de construção de modelos de Machine Learning, criar modelos de machine learning a partir de dados em seu estado bruto.", "assets/images/data-science.svg"));
-cursos.push(new Curso("10", "SQL", 199.50, "Curso abrange noções centrais de banco de dados relacionais, implementação de consultas SQL e analise de banco de dados.", "assets/images/sql.svg"));
+cursos.push(new Curso("10", "SQL", 199.50, "Curso abrange noções centrais de banco de dados relacionais, implementação de consultas SQL e analise de banco de dados.", "assets/images/sql.png"));
 
 const cursosCards = document.getElementById("cursos");
 const cartNumber = document.getElementById("cart-number")
